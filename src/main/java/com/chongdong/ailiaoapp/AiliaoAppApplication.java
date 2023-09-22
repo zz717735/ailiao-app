@@ -1,0 +1,13 @@
+package com.chongdong.ailiaoapp;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class AiliaoAppApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(AiliaoAppApplication.class, args);
+    }
+
+}
