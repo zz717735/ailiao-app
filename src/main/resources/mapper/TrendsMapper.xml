@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chongdong.ailiaoapp.mapper.TrendsMapper">
+
+    <resultMap id="BaseResultMap" type="com.chongdong.ailiaoapp.model.Trends">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="userid" column="userid" jdbcType="BIGINT"/>
+            <result property="content" column="content" jdbcType="VARCHAR"/>
+            <result property="imgsrc" column="imgsrc" jdbcType="VARCHAR"/>
+            <result property="count" column="count" jdbcType="BIGINT"/>
+            <result property="status" column="status" jdbcType="INTEGER"/>
+            <result property="edittime" column="edittime" jdbcType="TIMESTAMP"/>
+            <result property="createtime" column="createtime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,userid,content,
+        imgsrc,count,status,
+        edittime,createtime
+    </sql>
+</mapper>
