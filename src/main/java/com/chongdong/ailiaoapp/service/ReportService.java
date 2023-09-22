@@ -2,6 +2,7 @@ package com.chongdong.ailiaoapp.service;
 
 import com.chongdong.ailiaoapp.model.Report;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.chongdong.ailiaoapp.model.ResponseMap;
 
 /**
 * @author cd
@@ -9,5 +10,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
 * @createDate 2023-09-22 09:50:22
 */
 public interface ReportService extends IService<Report> {
-
+    /**
+     * 添加举报信息
+     * */
+    ResponseMap addReport(Report report);
 }
