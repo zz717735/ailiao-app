@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chongdong.ailiaoapp.mapper.CommentMapper">
+
+    <resultMap id="BaseResultMap" type="com.chongdong.ailiaoapp.model.Comment">
+            <id property="commentId" column="comment_id" jdbcType="BIGINT"/>
+            <result property="commentContent" column="comment_content" jdbcType="VARCHAR"/>
+            <result property="userId" column="user_id" jdbcType="BIGINT"/>
+            <result property="articleId" column="article_id" jdbcType="BIGINT"/>
+            <result property="articleType" column="article_type" jdbcType="INTEGER"/>
+            <result property="illegal" column="illegal" jdbcType="INTEGER"/>
+            <result property="parentCommentId" column="parent_comment_id" jdbcType="BIGINT"/>
+            <result property="parentCommentUserId" column="parent_comment_user_id" jdbcType="BIGINT"/>
+            <result property="replyCommentId" column="reply_comment_id" jdbcType="BIGINT"/>
+            <result property="replyCommentUserId" column="reply_comment_user_id" jdbcType="BIGINT"/>
+            <result property="commentLevel" column="comment_level" jdbcType="INTEGER"/>
+            <result property="praiseNum" column="praise_num" jdbcType="INTEGER"/>
+            <result property="topStatus" column="top_status" jdbcType="INTEGER"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        comment_id,comment_content,user_id,
+        article_id,article_type,illegal,
+        parent_comment_id,parent_comment_user_id,reply_comment_id,
+        reply_comment_user_id,comment_level,praise_num,
+        top_status,create_time
+    </sql>
+</mapper>
