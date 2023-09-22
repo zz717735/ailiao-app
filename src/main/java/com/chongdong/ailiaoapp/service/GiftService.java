@@ -2,6 +2,8 @@ package com.chongdong.ailiaoapp.service;
 
 import com.chongdong.ailiaoapp.model.Gift;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.chongdong.ailiaoapp.model.ResponseMap;
+import com.chongdong.ailiaoapp.utils.ResponseMapUtil;
 
 /**
 * @author cd
@@ -10,4 +12,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface GiftService extends IService<Gift> {
 
+    ResponseMap queryList();
 }
