@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chongdong.ailiaoapp.mapper.GiftReceiveMapper">
+
+    <resultMap id="BaseResultMap" type="com.chongdong.ailiaoapp.model.GiftReceive">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="receiver" column="receiver" jdbcType="BIGINT"/>
+            <result property="giver" column="giver" jdbcType="BIGINT"/>
+            <result property="giftId" column="gift_id" jdbcType="INTEGER"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,receiver,giver,
+        gift_id,create_time
+    </sql>
+</mapper>
