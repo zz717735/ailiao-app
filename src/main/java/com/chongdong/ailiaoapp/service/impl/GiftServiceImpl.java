@@ -2,9 +2,14 @@ package com.chongdong.ailiaoapp.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.chongdong.ailiaoapp.model.Gift;
+import com.chongdong.ailiaoapp.model.ResponseMap;
 import com.chongdong.ailiaoapp.service.GiftService;
 import com.chongdong.ailiaoapp.mapper.GiftMapper;
+import com.chongdong.ailiaoapp.utils.ResponseMapUtil;
+import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
 * @author cd
@@ -15,6 +20,14 @@ import org.springframework.stereotype.Service;
 public class GiftServiceImpl extends ServiceImpl<GiftMapper, Gift>
     implements GiftService{
 
+    @Resource
+    ResponseMapUtil<Gift> responseMapUtil;
+    @Override
+    public ResponseMap queryList() {
+         List<Gift> list = this.list();
+        System.out.println(list);
+        return responseMapUtil.getList(list);
+    }
 }
 
 

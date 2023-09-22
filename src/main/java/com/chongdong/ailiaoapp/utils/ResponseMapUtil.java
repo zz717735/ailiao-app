@@ -160,7 +160,7 @@ public class ResponseMapUtil<T>{
             responseMap.setMessage("统计成功");
         }else {
             responseMap.setFlag(false);
-            responseMap.setData(null);
+            responseMap.setData(0);
             responseMap.setMessage("统计失败");
         }
         return responseMap;

@@ -21,12 +21,12 @@ logging:
   level:
     com.example.websocketitem: debug
 server:
-  port: 8088
+  port: 8089
     # 配置 Https 证书
-  ssl:
-    key-store: classpath:client.p12
-    key-store-password: 123123
-    #    key-store-type: JKS
-    key-alias: client
+#  ssl:
+#    key-store: classpath:client.p12
+#    key-store-password: 123123
+#    #    key-store-type: JKS
+#    key-alias: client
 
 

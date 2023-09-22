@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import lombok.Data;
 
@@ -29,7 +30,7 @@ public class GiftReceive implements Serializable {
     /**
      * 赠送者id
      */
-    private Long giver;
+    private Long userId;
 
     /**
      * 礼物id
@@ -40,6 +41,11 @@ public class GiftReceive implements Serializable {
      * 礼物赠送时间
      */
     private LocalDateTime createTime;
+
+    /**
+     * 礼物价格
+     */
+    private BigDecimal giftPrice;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;

@@ -2,6 +2,9 @@ package com.chongdong.ailiaoapp.service;
 
 import com.chongdong.ailiaoapp.model.GiftReceive;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.chongdong.ailiaoapp.model.ResponseMap;
+
+import java.util.Date;
 
 /**
 * @author cd
@@ -10,4 +13,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface GiftReceiveService extends IService<GiftReceive> {
 
+
+    ResponseMap add(GiftReceive giftReceive);
+
+    ResponseMap myGift(Long receiver, String date);
 }
