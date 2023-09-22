@@ -6,6 +6,10 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 /**
@@ -24,18 +28,21 @@ public class Comment implements Serializable {
     /**
      * 评论内容
      */
+    @NotBlank
     @TableField(value = "comment_content")
     private String commentContent;
 
     /**
      * 评论人id
      */
+    @NotNull
     @TableField(value = "user_id")
     private Long userId;
 
     /**
      * 在哪篇文章（动态）下评论的
      */
+    @NotNull
     @TableField(value = "article_id")
     private Long articleId;
 
@@ -96,6 +103,7 @@ public class Comment implements Serializable {
     /**
      * 创建时间
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @TableField(value = "create_time")
     private LocalDateTime createTime;
 

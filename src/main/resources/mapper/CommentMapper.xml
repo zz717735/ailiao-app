@@ -28,4 +28,9 @@
         reply_comment_user_id,comment_level,praise_num,
         top_status,create_time
     </sql>
+    <update id="updatePraiseNumByCommentId">
+        update tcd_comment
+        set praise_num = #{praiseNum,jdbcType=NUMERIC}
+        where comment_id = #{commentId,jdbcType=NUMERIC}
+    </update>
 </mapper>
