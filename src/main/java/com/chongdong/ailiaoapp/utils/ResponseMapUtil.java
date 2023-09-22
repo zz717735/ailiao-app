@@ -1,8 +1,8 @@
 package com.chongdong.ailiaoapp.utils;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.example.websocketitem.factory.MapFactory;
-import com.example.websocketitem.model.ResponseMap;
+import com.chongdong.ailiaoapp.factory.MapFactory;
+import com.chongdong.ailiaoapp.model.ResponseMap;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 

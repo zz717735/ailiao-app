@@ -17,12 +17,6 @@ spring:
       max-file-size: 10MB #限制单个文件上传大小为10MB
       max-request-size: 100MB #限制一次多文件上传总数据大小为100MB
 
-# mybatis默认配置
-mybatis:
-  mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.example.websocketitem.model
-  configuration:
-    lazy-loading-enabled: true # 开启懒加载 延迟加载
 # 分页类默认配置
 pagehelper:
   helperDialect: mysql
