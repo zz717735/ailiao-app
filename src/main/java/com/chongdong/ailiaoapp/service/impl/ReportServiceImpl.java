@@ -27,6 +27,7 @@ public class ReportServiceImpl extends ServiceImpl<ReportMapper, Report>
     @Override
     public ResponseMap addReport(Report report) {
         report.setCreateTime(new Date());
+        report.setStatus(0);
         return responseMapUtil.addEntity(this.save(report));
     }
 }

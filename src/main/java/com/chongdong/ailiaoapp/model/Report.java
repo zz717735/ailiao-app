@@ -32,7 +32,7 @@ public class Report implements Serializable {
     private Long reporterId;
 
     /**
-     * 举报信息类型：1：动态举报
+     * 举报信息类型：1：动态举报 2：相册举报 3：聊天内容举报
      */
     private Integer type;
 
