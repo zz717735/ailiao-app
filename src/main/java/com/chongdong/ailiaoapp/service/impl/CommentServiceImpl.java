@@ -34,15 +34,8 @@ public class CommentServiceImpl extends ServiceImpl<CommentMapper, Comment>
         queryWrapper.eq("article_id", articleId)
                 .eq("article_type", articleIdType);
         List<Comment> commentList = this.baseMapper.selectList(queryWrapper);
-        for (Comment item : commentList) {
-            log.info("内容{}", item.toString());
-        }
-        log.info("结果 {}", CollUtil.isEmpty(commentList));
         List<Tree<Long>> treeList = createCommentTree(commentList);
-        if (!CollUtil.isEmpty(commentList)) {
-            return ResponseMap.success(treeList);
-        }
-        return ResponseMap.failure();
+        return (!CollUtil.isEmpty(commentList)) ? ResponseMap.success(treeList) : ResponseMap.failure();
     }
 
     private static List<Tree<Long>> createCommentTree(List<Comment> commentList) {
@@ -73,28 +66,19 @@ public class CommentServiceImpl extends ServiceImpl<CommentMapper, Comment>
     @Override
     public ResponseMap addComment(Comment comment) {
         int insert = this.baseMapper.insert(comment);
-        if (insert > 0) {
-            return ResponseMap.success();
-        }
-        return ResponseMap.failure();
+        return (insert > 0) ? ResponseMap.success() : ResponseMap.failure();
     }
 
     @Override
     public ResponseMap removeComment(Long id) {
         int deleteById = this.baseMapper.deleteById(id);
-        if (deleteById > 0) {
-            return ResponseMap.success();
-        }
-        return ResponseMap.failure();
+        return (deleteById > 0) ? ResponseMap.success() : ResponseMap.failure();
     }
 
     @Override
     public ResponseMap updatePraiseNumByCommentId(Long commentId, Integer praiseNum) {
         int updatePraiseNumByCommentId = commentMapper.updatePraiseNumByCommentId(praiseNum, commentId);
-        if (updatePraiseNumByCommentId > 0) {
-            return ResponseMap.success();
-        }
-        return ResponseMap.failure();
+        return (updatePraiseNumByCommentId > 0) ? ResponseMap.success() : ResponseMap.failure();
     }
 }
 

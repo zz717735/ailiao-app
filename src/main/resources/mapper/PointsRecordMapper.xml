@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chongdong.ailiaoapp.mapper.PointsRecordMapper">
+
+    <resultMap id="BaseResultMap" type="com.chongdong.ailiaoapp.model.PointsRecord">
+            <id property="pointsRecordId" column="points_record_id" jdbcType="BIGINT"/>
+            <result property="userId" column="user_id" jdbcType="BIGINT"/>
+            <result property="pointsChange" column="points_change" jdbcType="INTEGER"/>
+            <result property="pointsActivity" column="points_activity" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        points_record_id,user_id,points_change,
+        points_activity,create_time
+    </sql>
+</mapper>

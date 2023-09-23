@@ -2,6 +2,7 @@ package com.chongdong.ailiaoapp.mapper;
 
 import com.chongdong.ailiaoapp.model.Points;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
 
 /**
 * @author ASUS
@@ -10,7 +11,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 * @Entity com.chongdong.ailiaoapp.model.Points
 */
 public interface PointsMapper extends BaseMapper<Points> {
-
+    Points selectOneByUserId(@Param("userId") Long userId);
+    int updateTotalPointsByUserId(@Param("totalPoints") Integer totalPoints, @Param("userId") Long userId);
 }
 
 
