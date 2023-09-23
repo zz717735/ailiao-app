@@ -1,5 +1,6 @@
 package com.chongdong.ailiaoapp.service;
 
+import com.chongdong.ailiaoapp.model.ResponseMap;
 import com.chongdong.ailiaoapp.model.Trends;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -10,4 +11,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface TrendsService extends IService<Trends> {
 
+    //删除单个动态
+    ResponseMap deleteTrends(Long id);
+
+    ResponseMap selectOneTrends(Long id);
+
+    ResponseMap AllQueryTrends(Long userid);
+
+    ResponseMap addOrEdit(Trends trends);
 }

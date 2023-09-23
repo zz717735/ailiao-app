@@ -13,4 +13,6 @@ import com.chongdong.ailiaoapp.utils.ResponseMapUtil;
 public interface GiftService extends IService<Gift> {
 
     ResponseMap queryList();
+
+    ResponseMap queryOne(Integer giftId, Long userId);
 }
