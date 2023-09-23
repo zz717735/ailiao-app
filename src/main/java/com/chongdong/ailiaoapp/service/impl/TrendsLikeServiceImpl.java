@@ -35,6 +35,10 @@ public class TrendsLikeServiceImpl extends ServiceImpl<TrendsLikeMapper, TrendsL
         queryWrapper.eq("like_people_id",trendsLike.getLikePeopleId());
         queryWrapper.eq("trends_id",trendsLike.getTrendsId());
         TrendsLike trendsLike1 = trendsLikeMapper.selectOne(queryWrapper);
+        Trends trends1 = trendsMapper.selectById(trendsLike.getTrendsId());
+        if (trends1==null){
+            return responseMapUtil.updateOrAddEntity(-1);
+        }
         if (trendsLike1==null){
             Trends trends = trendsMapper.selectById(trendsLike.getTrendsId());
             trends.setCount(trends.getCount()+1);
