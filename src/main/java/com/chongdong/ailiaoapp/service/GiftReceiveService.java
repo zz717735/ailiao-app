@@ -16,5 +16,7 @@ public interface GiftReceiveService extends IService<GiftReceive> {
 
     ResponseMap add(GiftReceive giftReceive);
 
-    ResponseMap myGift(Long receiver, String date);
+    ResponseMap myGift(Long receiver);
+
+    ResponseMap giftRanking(String date);
 }

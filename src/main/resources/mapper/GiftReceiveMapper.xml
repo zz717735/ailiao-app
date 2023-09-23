@@ -11,6 +11,7 @@
             <result property="giftId" column="gift_id" jdbcType="INTEGER"/>
             <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
             <result property="giftPrice" column="gift_price" jdbcType="DECIMAL"/>
+            <result property="remark" column="remark" jdbcType="DECIMAL"/>
     </resultMap>
 
     <sql id="Base_Column_List">

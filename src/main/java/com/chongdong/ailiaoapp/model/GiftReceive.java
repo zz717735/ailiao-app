@@ -47,6 +47,11 @@ public class GiftReceive implements Serializable {
      */
     private BigDecimal giftPrice;
 
+    /**
+     * 备注
+     */
+    private String remark;
+
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 }
