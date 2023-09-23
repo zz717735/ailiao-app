@@ -180,4 +180,22 @@ public class ResponseMapUtil<T>{
         }
         return responseMap;
     }
+
+    /**
+     * 修改或添加返回结果
+     * */
+    public ResponseMap updateOrAddEntity(int result) {
+        if (result>0){
+            responseMap.setFlag(true);
+            responseMap.setData(null);
+            responseMap.setMessage("操作成功");
+        }else {
+            responseMap.setFlag(false);
+            responseMap.setData(null);
+            responseMap.setMessage("操作失败");
+        }
+        return responseMap;
+    }
+
+
 }

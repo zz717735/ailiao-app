@@ -1,5 +1,6 @@
 package com.chongdong.ailiaoapp.service;
 
+import com.chongdong.ailiaoapp.model.ResponseMap;
 import com.chongdong.ailiaoapp.model.Rule;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -10,4 +11,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface RuleService extends IService<Rule> {
 
+    ResponseMap selectOneRule(Integer id);
+
+    String addOrEditOne(Rule rule);
+
+    ResponseMap selectAllRule();
 }

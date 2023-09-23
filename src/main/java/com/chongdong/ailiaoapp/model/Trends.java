@@ -1,11 +1,14 @@
 package com.chongdong.ailiaoapp.model;
 
+import com.alibaba.fastjson.JSONArray;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 /**
@@ -55,6 +58,11 @@ public class Trends implements Serializable {
      * 创建时间
      */
     private Date createtime;
+
+    //用于接收数组，在数据表中并不存在
+    @TableField(exist = false)
+    @JsonProperty(value ="imagesArray")
+    private JSONArray imagesArray;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;

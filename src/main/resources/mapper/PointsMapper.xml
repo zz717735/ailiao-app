@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chongdong.ailiaoapp.mapper.PointsMapper">
+
+    <resultMap id="BaseResultMap" type="com.chongdong.ailiaoapp.model.Points">
+            <id property="pointsId" column="points_id" jdbcType="BIGINT"/>
+            <result property="userId" column="user_id" jdbcType="BIGINT"/>
+            <result property="totalPoints" column="total_points" jdbcType="INTEGER"/>
+            <result property="currentLevel" column="current_level" jdbcType="VARCHAR"/>
+            <result property="discountRate" column="discount_rate" jdbcType="INTEGER"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="lastLevelUpdateDate" column="last_level_update_date" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        points_id,user_id,total_points,
+        current_level,discount_rate,create_time,
+        last_level_update_date
+    </sql>
+</mapper>
