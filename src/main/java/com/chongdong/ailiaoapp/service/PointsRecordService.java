@@ -11,5 +11,5 @@ import com.chongdong.ailiaoapp.model.ResponseMap;
 */
 public interface PointsRecordService extends IService<PointsRecord> {
 
-    ResponseMap listPointsRecordByUserId(Long userId);
+    ResponseMap listPointsRecordByUserId(Long userId,String yearMonth);
 }

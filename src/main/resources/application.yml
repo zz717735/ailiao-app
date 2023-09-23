@@ -21,7 +21,7 @@ logging:
   level:
     com.example.websocketitem: debug
 server:
-  port: 8089
+  port: 8088
     # 配置 Https 证书
 #  ssl:
 #    key-store: classpath:client.p12

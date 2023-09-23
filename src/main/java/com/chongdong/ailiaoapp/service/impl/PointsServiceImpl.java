@@ -51,11 +51,9 @@ public class PointsServiceImpl extends ServiceImpl<PointsMapper, Points>
 
     @Override
     public ResponseMap getPointsByUserId(Long userId) {
-        log.info("{}",userId);
         QueryWrapper<Points> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("user_id", userId);
         Points selectOne = this.baseMapper.selectOne(queryWrapper);
-        log.info("{}",selectOne.toString());
         return (ObjectUtil.isNotEmpty(selectOne)) ? ResponseMap.success(selectOne) : ResponseMap.failure().data("没有该用户的积分记录");
     }
 }
