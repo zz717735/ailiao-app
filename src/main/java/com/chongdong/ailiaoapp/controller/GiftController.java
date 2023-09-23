@@ -21,8 +21,7 @@ public class GiftController {
     private GiftService giftService;
     @Resource
     private GiftReceiveService giftReceiveService;
-    @Resource
-    private ResponseMapUtil<Gift> responseMapUtil;
+
 
     /**
      * 礼物遍历
