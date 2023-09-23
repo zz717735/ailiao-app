@@ -2,8 +2,10 @@ package com.chongdong.ailiaoapp.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.chongdong.ailiaoapp.mapper.TrendsLikeMapper;
 import com.chongdong.ailiaoapp.model.ResponseMap;
 import com.chongdong.ailiaoapp.model.Trends;
+import com.chongdong.ailiaoapp.model.TrendsLike;
 import com.chongdong.ailiaoapp.service.TrendsService;
 import com.chongdong.ailiaoapp.mapper.TrendsMapper;
 import com.chongdong.ailiaoapp.utils.ImageUtil;
@@ -27,10 +29,15 @@ public class TrendsServiceImpl extends ServiceImpl<TrendsMapper, Trends>
     ResponseMapUtil<Trends> responseMapUtil;
     @Resource
     TrendsMapper trendsMapper;
+    @Resource
+    TrendsLikeMapper trendsLikeMapper;
 
     //删除单个动态
     @Override
     public ResponseMap deleteTrends(Long id) {
+        QueryWrapper<TrendsLike> wrapper=new QueryWrapper<>();
+        wrapper.eq("trends_id",id);
+        trendsLikeMapper.delete(wrapper);
         return responseMapUtil.deleteEntity(removeById(id));
     }
 

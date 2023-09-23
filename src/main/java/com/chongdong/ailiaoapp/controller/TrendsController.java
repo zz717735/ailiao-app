@@ -5,9 +5,12 @@ import com.chongdong.ailiaoapp.factory.EntityFactory;
 import com.chongdong.ailiaoapp.model.AlbumPicture;
 import com.chongdong.ailiaoapp.model.ResponseMap;
 import com.chongdong.ailiaoapp.model.Trends;
+import com.chongdong.ailiaoapp.model.TrendsLike;
+import com.chongdong.ailiaoapp.service.TrendsLikeService;
 import com.chongdong.ailiaoapp.service.TrendsService;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.websocket.server.PathParam;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -21,6 +24,8 @@ import java.util.*;
 public class TrendsController {
     @Resource
     TrendsService trendsService;
+    @Resource
+    TrendsLikeService trendsLikeService;
 
 
     //动态单个删除
@@ -51,6 +56,13 @@ public class TrendsController {
         return trendsService.addOrEdit(trends);
     }
 
+    //动态点赞（一个用户只能点赞一个动态一次）
+    @PostMapping("like")
+    @ResponseBody
+    public ResponseMap LikeTrends(@RequestBody TrendsLike trendsLike){
+        return trendsLikeService.likeTrends(trendsLike);
+    }
+
     //动态图片上传
     @PostMapping(value = "/upload")
     //@RequestParam指向前端input file的name,加入HttpServletRequest请求
@@ -75,7 +87,6 @@ public class TrendsController {
             //UUID去掉中间的"-",并将原文件后缀名加入新文件
             String newname= UUID.randomUUID().toString().replace("-","")
                     +oldname.substring(oldname.lastIndexOf("."));
-
             //建立每一个文件上传的返回参数
             //文件保存操作
             try {
