@@ -4,20 +4,21 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+
 import lombok.Data;
 
 /**
- * 
  * @TableName tcd_user_info
  */
-@TableName(value ="tcd_user_info")
+@TableName(value = "tcd_user_info")
 @Data
 public class UserInfo implements Serializable {
     /**
-     * 
+     *
      */
     @TableId(type = IdType.AUTO)
     private Long infoId;
@@ -96,6 +97,12 @@ public class UserInfo implements Serializable {
      * 用户状态：0：冻结，1：解冻
      */
     private Integer status;
+
+    /**
+     * 距离
+     */
+    @TableField(exist = false)
+    private Double distance;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;

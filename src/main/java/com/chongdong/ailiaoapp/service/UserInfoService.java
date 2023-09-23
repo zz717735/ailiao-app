@@ -1,5 +1,6 @@
 package com.chongdong.ailiaoapp.service;
 
+import com.chongdong.ailiaoapp.model.ResponseMap;
 import com.chongdong.ailiaoapp.model.UserInfo;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -10,4 +11,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface UserInfoService extends IService<UserInfo> {
 
+    ResponseMap recommend(Integer gender);
+
+    ResponseMap nearby(Integer gender, String region);
 }
