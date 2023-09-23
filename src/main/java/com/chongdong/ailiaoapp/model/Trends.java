@@ -64,6 +64,7 @@ public class Trends implements Serializable {
     @JsonProperty(value ="imagesArray")
     private JSONArray imagesArray;
 
+
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 }

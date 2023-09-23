@@ -27,14 +27,11 @@ public class RuleController {
         return ruleService.selectAllRule();
     }
 
-
-
-    //添加和修改会员规则表
-    @PostMapping("addAndEdit")
-    public String addOrEdit(@RequestBody Rule rule){
-        System.out.println(rule.toString());
-        return ruleService.addOrEditOne(rule);
-    }
+//    //添加和修改会员规则表
+//    @PostMapping("addAndEdit")
+//    public String addOrEdit(@RequestBody Rule rule){
+//        return ruleService.addOrEditOne(rule);
+//    }
 
 
 

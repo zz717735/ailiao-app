@@ -2,6 +2,7 @@ package com.chongdong.ailiaoapp.service;
 
 import com.chongdong.ailiaoapp.model.Points;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.chongdong.ailiaoapp.model.ResponseMap;
 
 /**
 * @author ASUS
@@ -10,4 +11,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface PointsService extends IService<Points> {
 
+    ResponseMap updateTotalPointsByUserId(Long userId, Integer addPoints,String pointsActivity);
+
+    ResponseMap getPointsByUserId(Long userId);
 }
