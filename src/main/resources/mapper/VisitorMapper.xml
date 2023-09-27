@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chongdong.ailiaoapp.mapper.VisitorMapper">
+
+    <resultMap id="BaseResultMap" type="com.chongdong.ailiaoapp.model.Visitor">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="visitorId" column="visitor_id" jdbcType="BIGINT"/>
+            <result property="respondentsId" column="respondents_id" jdbcType="BIGINT"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    <resultMap id="BaseResultMapWith" type="com.chongdong.ailiaoapp.model.Visitor">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="visitorId" column="visitor_id" jdbcType="BIGINT"/>
+        <result property="respondentsId" column="respondents_id" jdbcType="BIGINT"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <association property="userInfo" column="respondents_id" select="com.chongdong.ailiaoapp.mapper.UserInfoMapper.userQueryById"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,visitor_id,respondents_id,
+        create_time
+    </sql>
+    <select id="queryAllById" resultMap="BaseResultMapWith">
+        select id,visitor_id,respondents_id,
+               create_time
+        from tcd_visitor where respondents_id=#{respondentsId} and to_days(create_time)=to_days(now());
+    </select>
+</mapper>
