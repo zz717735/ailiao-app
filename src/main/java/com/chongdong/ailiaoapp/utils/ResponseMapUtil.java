@@ -196,6 +196,20 @@ public class ResponseMapUtil<T>{
         }
         return responseMap;
     }
-
+    /**
+     * 修改或添加返回结果
+     * */
+    public ResponseMap queryCountEntity(long result) {
+        if (result>=1){
+            responseMap.setFlag(true);
+            responseMap.setData(result);
+            responseMap.setMessage("操作成功");
+        }else {
+            responseMap.setFlag(false);
+            responseMap.setData(null);
+            responseMap.setMessage("操作失败");
+        }
+        return responseMap;
+    }
 
 }

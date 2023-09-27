@@ -12,7 +12,12 @@
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,album_id,path,
+        id,album_id,`path`,
         create_time
     </sql>
+    <select id="queryAll" resultMap="BaseResultMap">
+        select id,album_id,`path`,
+               create_time
+        from tcd_album_picture where album_id=#{albumId}
+    </select>
 </mapper>

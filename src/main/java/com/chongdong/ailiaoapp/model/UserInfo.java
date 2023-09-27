@@ -8,6 +8,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import lombok.Data;
 
@@ -103,6 +104,11 @@ public class UserInfo implements Serializable {
      */
     @TableField(exist = false)
     private Double distance;
+    /**
+     * 级联查询相册
+     * */
+    @TableField(exist = false)
+    private List<Album> albums;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;

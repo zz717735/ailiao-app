@@ -6,7 +6,11 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
+
 import lombok.Data;
+
+import javax.swing.event.ListDataEvent;
 
 /**
  * 相册
@@ -53,6 +57,9 @@ public class Album implements Serializable {
 
     @TableField(exist = false)
     private AlbumPicture firstAlbumPicture;
+
+    @TableField(exist = false)
+    private List<AlbumPicture> albumPictures;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;

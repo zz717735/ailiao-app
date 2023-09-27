@@ -14,4 +14,6 @@ public interface UserInfoService extends IService<UserInfo> {
     ResponseMap recommend(Integer gender);
 
     ResponseMap nearby(Integer gender, String region);
+
+    ResponseMap queryById(Long infoId,Long respondentsId);
 }

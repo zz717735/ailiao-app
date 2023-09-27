@@ -22,6 +22,25 @@
             <result property="password" column="password" jdbcType="VARCHAR"/>
             <result property="status" column="status" jdbcType="INTEGER"/>
     </resultMap>
+    <resultMap id="BaseResultMapWith" type="com.chongdong.ailiaoapp.model.UserInfo">
+        <id property="infoId" column="info_id" jdbcType="BIGINT"/>
+        <result property="gender" column="gender" jdbcType="INTEGER"/>
+        <result property="labels" column="labels" jdbcType="VARCHAR"/>
+        <result property="headPath" column="head_path" jdbcType="VARCHAR"/>
+        <result property="birthday" column="birthday" jdbcType="DATE"/>
+        <result property="jobTitle" column="job_title" jdbcType="VARCHAR"/>
+        <result property="region" column="region" jdbcType="VARCHAR"/>
+        <result property="introduction" column="introduction" jdbcType="VARCHAR"/>
+        <result property="likeNumber" column="like_number" jdbcType="INTEGER"/>
+        <result property="description" column="description" jdbcType="VARCHAR"/>
+        <result property="nickname" column="nickname" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="phoneNumber" column="phone_number" jdbcType="VARCHAR"/>
+        <result property="chatLogin" column="chat_login" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+        <result property="status" column="status" jdbcType="INTEGER"/>
+        <collection property="albums" column="info_id" select="com.chongdong.ailiaoapp.mapper.AlbumMapper.queryAllList"/>
+    </resultMap>
 
     <sql id="Base_Column_List">
         info_id,gender,labels,
@@ -31,4 +50,22 @@
         phone_number,chat_login,password,
         status
     </sql>
+    <select id="queryById" resultMap="BaseResultMapWith">
+        select info_id,gender,labels,
+               head_path,birthday,job_title,
+               region,introduction,like_number,
+               description,nickname,create_time,
+               phone_number,chat_login,password,
+               status
+        from tcd_user_info where info_id=#{infoId}
+    </select>
+    <select id="userQueryById" resultMap="BaseResultMap">
+        select info_id,gender,labels,
+               head_path,birthday,job_title,
+               region,introduction,like_number,
+               description,nickname,create_time,
+               phone_number,chat_login,password,
+               status
+        from tcd_user_info where info_id=#{infoId}
+    </select>
 </mapper>

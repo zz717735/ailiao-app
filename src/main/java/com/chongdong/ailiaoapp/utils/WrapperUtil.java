@@ -1,6 +1,7 @@
 package com.chongdong.ailiaoapp.utils;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.chongdong.ailiaoapp.model.Relationship;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -156,6 +157,12 @@ public class WrapperUtil<T> {
         QueryWrapper<T> wrapper = this.wrapperTimeDesc();
         wrapper.eq("user_id",userId);
         wrapper.eq("openness",0);
+        return wrapper;
+    }
+    public QueryWrapper<T> getRelationship(Relationship relationship){
+        QueryWrapper<T> wrapper = new QueryWrapper<>();
+        wrapper.eq("owner_id",relationship.getOwnerId());
+        wrapper.eq("friend_id",relationship.getFriendId());
         return wrapper;
     }
 }

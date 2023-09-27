@@ -70,7 +70,7 @@ public class TrendsController {
         //设置当前日期
         //String uploaddate= new SimpleDateFormat("yyyy-MM-dd").format(new Date());
         //设置文件上传保存文件路径：保存在项目运行目录下的uploadFile文件夹+当前日期
-        String savepath = "./images/";
+        String savepath = "./images/";//项目路径需要有一个服务器路劲地址
         //创建文件夹,当文件夹不存在时，创建文件夹
         File folder = new File(savepath);
         if(!folder.isDirectory()){

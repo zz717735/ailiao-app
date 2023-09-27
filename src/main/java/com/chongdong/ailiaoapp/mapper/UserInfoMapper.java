@@ -10,7 +10,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 * @Entity com.chongdong.ailiaoapp.model.UserInfo
 */
 public interface UserInfoMapper extends BaseMapper<UserInfo> {
-
+    UserInfo queryById(Long infoId);
+    UserInfo userQueryById(Long infoId);
 }
 
 

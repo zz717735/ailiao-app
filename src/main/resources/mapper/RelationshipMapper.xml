@@ -8,11 +8,18 @@
             <id property="id" column="id" jdbcType="BIGINT"/>
             <result property="ownerId" column="owner_id" jdbcType="BIGINT"/>
             <result property="friendId" column="friend_id" jdbcType="BIGINT"/>
+            <result property="checking" column="checking" />
             <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="contentText" column="content_text"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,owner_id,friend_id,
-        create_time
+        id,owner_id,friend_id,checking,
+        create_time,content_text
     </sql>
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="uuid" useGeneratedKeys="true">
+        insert into tcd_relationship(owner_id, friend_id, checking, create_time,content_text)
+        values (#{ownerId}, #{friendId}, #{checking}, #{createTime},#{contentText})
+    </insert>
 </mapper>

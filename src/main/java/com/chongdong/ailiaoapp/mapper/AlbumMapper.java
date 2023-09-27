@@ -3,6 +3,8 @@ package com.chongdong.ailiaoapp.mapper;
 import com.chongdong.ailiaoapp.model.Album;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
+import java.util.List;
+
 /**
 * @author cd
 * @description 针对表【tcd_album(相册)】的数据库操作Mapper
@@ -10,7 +12,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 * @Entity com.chongdong.ailiaoapp.model.Album
 */
 public interface AlbumMapper extends BaseMapper<Album> {
-
+    List<Album> queryAllList(Long userId);
 }
 
 

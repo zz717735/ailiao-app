@@ -9,7 +9,7 @@ import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("users")
+@RequestMapping("/users")
 public class UserController {
     @Resource
     private UserInfoService userInfoService;
@@ -25,6 +25,13 @@ public class UserController {
         return responseMapUtil.getList(userInfoService.list());
     }
 
+    /**
+     * 查看个人信息
+     * */
+    @GetMapping("/queryById")
+    public ResponseMap queryById(@RequestParam Long infoId,@RequestParam(required = false) Long respondentsId){
+        return userInfoService.queryById(infoId,respondentsId);
+    }
     /**
      * 首页推荐
      * @param gender

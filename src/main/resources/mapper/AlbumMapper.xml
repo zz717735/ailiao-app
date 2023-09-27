@@ -13,10 +13,26 @@
             <result property="capacity" column="capacity" jdbcType="INTEGER"/>
             <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
     </resultMap>
+    <resultMap id="BaseResultMapWith" type="com.chongdong.ailiaoapp.model.Album">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="userId" column="user_id" jdbcType="BIGINT"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="openness" column="openness" jdbcType="INTEGER"/>
+        <result property="status" column="status" jdbcType="INTEGER"/>
+        <result property="capacity" column="capacity" jdbcType="INTEGER"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <collection property="albumPictures" column="id" select="com.chongdong.ailiaoapp.mapper.AlbumPictureMapper.queryAll"/>
+    </resultMap>
 
     <sql id="Base_Column_List">
-        id,user_id,name,
+        id,user_id,`name`,
         openness,status,capacity,
         create_time
     </sql>
+    <select id="queryAllList" resultMap="BaseResultMapWith">
+        select  id,user_id,`name`,
+                openness,status,capacity,
+                create_time
+        from tcd_album where user_id=#{userId}
+    </select>
 </mapper>

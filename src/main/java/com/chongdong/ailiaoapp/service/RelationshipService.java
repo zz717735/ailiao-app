@@ -2,6 +2,7 @@ package com.chongdong.ailiaoapp.service;
 
 import com.chongdong.ailiaoapp.model.Relationship;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.chongdong.ailiaoapp.model.ResponseMap;
 
 /**
 * @author cd
@@ -10,4 +11,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface RelationshipService extends IService<Relationship> {
 
+    ResponseMap add(Relationship relationship);
+
+    ResponseMap update(Relationship relationship);
 }

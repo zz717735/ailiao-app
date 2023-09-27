@@ -35,6 +35,14 @@ public class Relationship implements Serializable {
      * 好友关系创建时间
      */
     private Date createTime;
+    /**
+     * 好友验证关系
+     * */
+    private Integer checking;
+    /**
+     * 发送消息介绍
+     * */
+    private String contentText;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
